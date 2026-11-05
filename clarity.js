@@ -1,5 +1,5 @@
 'use strict';
-// v1.10: one task per screen, preserving the existing storage format.
+// v1.11: one task per screen, preserving the existing storage format.
 function milkTotal(d=day(new Date())){
  const rs=state.records.filter(r=>r.type==='milk'&&day(r.at)===d&&Number.isFinite(r.amount)&&r.amount>0);
  const sum=kind=>{const items=rs.filter(r=>r.kind===kind);return items.length?items.reduce((n,r)=>n+r.amount,0)+' mL':'未記録'};
