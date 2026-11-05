@@ -18,7 +18,7 @@ function bindSignGestures(){const sign=$('#sign'),clock=$('#clock-strip');sign.o
  clock.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){e.preventDefault();setSignHidden(false)}else if(e.key==='ArrowUp'){e.preventDefault();setSignHidden(true)}});clock.tabIndex=0;
 }
 if('scrollRestoration' in history)history.scrollRestoration='manual';
-bindSignGestures();updateHeaderClock();setInterval(updateHeaderClock,250);
+bindSignGestures();updateHeaderClock();setInterval(()=>updateHeaderClock(),1000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden){updateHeaderClock();if(undoAction&&Date.now()>=undoAction.until)clearNotice()}});
 if(state)render();
 if(typeof module!=='undefined')module.exports={birthElapsed};
