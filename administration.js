@@ -4,12 +4,12 @@ let routeHistory=[],lastRoute='home',dayPrivate=true,doctorDay=false,recordTarge
 page='home';
 function go(target){if(target!==page){routeHistory.push({page,date});page=target}doctorDay=false;reportViewing=false;render();window.scrollTo(0,0)}
 function backPage(){const previous=routeHistory.pop();if(previous){page=previous.page;date=previous.date}else page='home';doctorDay=false;reportViewing=false;render();window.scrollTo(0,0)}
-function topButtons(){return '<div class="page-navigation"><button type="button" data-back>前のページへ</button><button type="button" data-home>表紙へ</button></div>'}
+function topButtons(){return '<div class="page-navigation"><button type="button" data-back>前のページへ</button><button type="button" data-home>TOPへ</button></div>'}
 function wireNavigation(root=document){root.querySelectorAll('[data-back]').forEach(b=>b.onclick=backPage);root.querySelectorAll('[data-home]').forEach(b=>b.onclick=()=>goHome());root.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go))}
 function goHome(){routeHistory=[];page='home';doctorDay=false;reportViewing=false;close();setSignHidden(false);render();window.scrollTo(0,0)}
 function stopReceiptCamera(){cameraSession++;cameraOpening=false;if(cameraStream){cameraStream.getTracks().forEach(t=>t.stop());cameraStream=null}const video=$('#receipt-live');if(video)video.srcObject=null}
 close=function(){stopReceiptCamera();closeBeforeAdmin()};
-modal=function(html){stopReceiptCamera();modalBeforeAdmin(html);const dialog=$('#dialog');const nav=document.createElement('div');nav.className='dialog-navigation';nav.innerHTML='<button type="button" id="modal-back">前の画面へ</button><button type="button" data-home>表紙へ</button>';dialog.prepend(nav);$('#modal-back').onclick=()=>close();wireNavigation(dialog)};
+modal=function(html){stopReceiptCamera();modalBeforeAdmin(html);const dialog=$('#dialog');const nav=document.createElement('div');nav.className='dialog-navigation';nav.innerHTML='<button type="button" id="modal-back">前の画面へ</button><button type="button" data-home>TOPへ</button>';dialog.prepend(nav);$('#modal-back').onclick=()=>close();wireNavigation(dialog)};
 $('#dialog').addEventListener('close',stopReceiptCamera);window.addEventListener('pagehide',stopReceiptCamera);
 function initialDue(profile){if(!profile.due)profile.due='2026-11-24'}
 render=function(){ensureUX();initialDue(state.profile);renderBeforeAdmin();const v=$('#view');$('#nav').innerHTML=[['daily','記録する'],['review','記録を見る'],['tools','設定・準備']].map(([k,n])=>`<button data-go="${k}" class="${page===k||k==='review'&&['day','graphs','search','vaccine-view','receipt-view','legacy-photos','pending-view'].includes(page)?'active':''}">${n}</button>`).join('');document.querySelectorAll('.display-options').forEach(el=>el.remove());document.body.classList.toggle('doctor-view',doctorDay);$('#thumb-dock')?.remove();
