@@ -25,5 +25,5 @@ function leaveAlarm(){holdActive=false;holdToken++;endAlarmHold();if(alarmMedia)
 window.addEventListener('pagehide',leaveAlarm);document.addEventListener('visibilitychange',()=>{if(document.hidden&&page==='alarms')leaveAlarm()});
 const validateBeforeAlarms=validateBackup;
 validateBackup=function(s){validateBeforeAlarms(s);if(s.alarms!==undefined){if(!Array.isArray(s.alarms)||s.alarms.length>10)throw Error('アラームは10件までです');const ids=new Set();for(const a of s.alarms){if(!a||typeof a.id!=='string'||ids.has(a.id)||!/^([01]\d|2[0-3]):[0-5]\d$/.test(a.time)||typeof a.text!=='string'||!a.text.trim()||a.text.length>200||typeof a.enabled!=='boolean'||typeof a.repeat!=='boolean'||!Number.isFinite(a.nextAt)||a.nextAt<0||!a.voice||!Number.isFinite(a.voice.seconds)||a.voice.seconds<0||a.voice.seconds>10||typeof a.voice.data!=='string'||a.voice.data.length>2000000||!/^data:audio\/[a-zA-Z0-9.+;= -]+;base64,[A-Za-z0-9+/=]+$/.test(a.voice.data))throw Error('音声アラームの形式が不正です');ids.add(a.id)}}};
-setInterval(tickAlarms,250);
+setInterval(()=>tickAlarms(),250);
 if(state)render();
