@@ -1,5 +1,5 @@
 'use strict';
-// v1.11: one task per screen, preserving the existing storage format.
+// v1.12: one task per screen, preserving the existing storage format.
 function milkTotal(d=day(new Date())){
  const rs=state.records.filter(r=>r.type==='milk'&&day(r.at)===d&&Number.isFinite(r.amount)&&r.amount>0);
  const sum=kind=>{const items=rs.filter(r=>r.kind===kind);return items.length?items.reduce((n,r)=>n+r.amount,0)+' mL':'未記録'};
@@ -12,7 +12,8 @@ milkQuick=function(kind){milk108(kind);$('#dialog h2')?.insertAdjacentHTML('afte
 sleepToggle=function(who){
  ensureUX();const previous=state.activeSleep[who]?{...state.activeSleep[who]}:null;
  const label=who==='mama'?'ママ':'赤ちゃん';
- form(label+'：'+(previous?'起きた':'寝た'),'<p class="hint">いまの時刻が入っています。時刻を押すと変更できます。</p><label>寝た日時<input name="at" type="datetime-local" required value="'+localTime(previous?.at||new Date())+'"></label>'+(previous?'<label>起きた日時<input name="end" type="datetime-local" required value="'+localTime(new Date())+'"></label>':'')+'<button type="button" id="sleep-now">'+(previous?'起きた':'寝た')+'時刻を「いま」にする</button>',async f=>{
+ const sleepTime=d=>{const x=new Date(d);return localTime(x)+':'+String(x.getSeconds()).padStart(2,'0')};
+ form(label+'：'+(previous?'起きた':'寝た'),'<p class="hint">いまの時刻が入っています。時刻を押すと変更できます。</p><label>寝た日時<input name="at" type="datetime-local" required value="'+sleepTime(previous?.at||new Date())+'"></label>'+(previous?'<label>起きた日時<input name="end" type="datetime-local" required value="'+sleepTime(new Date())+'"></label>':'')+'<button type="button" id="sleep-now">'+(previous?'起きた':'寝た')+'時刻を「いま」にする</button>',async f=>{
   const at=new Date(f.get('at')),end=previous?new Date(f.get('end')):null,now=new Date();
   if(!Number.isFinite(+at)||at>now)throw Error('寝た日時は現在以前を指定してください');
   if(previous&&(!Number.isFinite(+end)||end>now||end<=at))throw Error('起きた日時は寝た日時より後、現在以前を指定してください');
@@ -21,7 +22,7 @@ sleepToggle=function(who){
   if(record){state.records.push(record);delete state.activeSleep[who]}else state.activeSleep[who]={id:uid(),at:at.toISOString()};
   try{await persist()}catch(e){if(record)state.records=state.records.filter(r=>r.id!==record.id);if(previous)state.activeSleep[who]=previous;else delete state.activeSleep[who];throw e}
  });
- $('#sleep-now').onclick=()=>{$('#dialog input[name="'+(previous?'end':'at')+'"]').value=localTime(new Date())};
+ $('#sleep-now').onclick=()=>{$('#dialog input[name="'+(previous?'end':'at')+'"]').value=sleepTime(new Date())};
 };
 const modal108=modal;
 modal=function(html){modal108(html);const d=$('#dialog');d.querySelectorAll('button').forEach(b=>{if(b.matches('[data-home]'))b.textContent='TOP';else if(b.id!=='modal-back'&&/^(戻る|前のページへ|TOPへ?)$/.test(b.textContent.trim()))b.hidden=true});};
