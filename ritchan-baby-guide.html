@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eee7f0">
+<title>りっちゃん母子手帳｜かんたん使い方案内</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:68px}body{margin:0;background:#f6f2ec;color:#34313b;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",sans-serif;font-size:17px;line-height:1.85;overflow-wrap:anywhere}header,main,footer{max-width:760px;margin:auto}header{text-align:center;padding:38px 22px 30px;background:#eee7f0;border-radius:0 0 36px 36px}h1{font-size:clamp(25px,5.8vw,36px);line-height:1.6;letter-spacing:.015em;margin:20px 0 10px}h2{font-size:clamp(24px,5vw,29px);line-height:1.6;margin:0 0 12px}h3{font-size:20px;line-height:1.5;margin:0 0 8px}p{margin:0 0 16px}.brand{font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center;gap:12px}.grape{color:#746082;font-size:17px;line-height:.7;letter-spacing:-4px;margin-right:4px}.intro-label,.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;color:#786286}.intro-label{margin-top:22px}.intro{color:#64596c}.ill{width:155px;height:140px;display:block;flex-shrink:0}header .ill{margin:auto;width:190px;height:171px}.flow{display:flex;gap:8px;align-items:center;justify-content:center;margin:12px 0 22px;font-size:14px}.flow span{white-space:nowrap;background:#fff;border-radius:9px;padding:9px 12px}.flow b{font-weight:400;color:#8a7495}.swipe{font-size:13px;color:#786286;margin:0}nav{position:sticky;top:0;z-index:2;display:flex;justify-content:center;gap:3px;background:#faf7f1f5;border-bottom:1px solid #e3dce6;padding:10px 6px;backdrop-filter:blur(8px)}nav a{padding:5px 9px;font-size:13px;text-decoration:none;color:#64506f;border-radius:12px}nav a:hover{background:#e7ddec}main{padding:12px 16px 0}.chapter{position:relative;display:flex;gap:14px;padding:28px 20px;margin:20px 0;background:#fff;border:1px solid #e9e1e8;border-radius:24px;scroll-margin-top:12px}.chapter:nth-child(even){background:#f4f7f2}.visual{position:relative;align-self:flex-start}.step{position:absolute;bottom:0;left:15px;font-size:12px;color:#a295a8;display:none}.copy{min-width:0;flex:1}.eyebrow{margin:0 0 6px}.lead{font-weight:650}.tip{font-size:14px;line-height:1.85;padding:14px 16px;border-left:3px solid #b5cbbf;background:#edf2ed;border-radius:0 10px 10px 0}.route{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px;margin:18px 0}.route span{background:#eee7f2;border-radius:7px;padding:7px 10px}.route i{font-style:normal;color:#9a86a3}.menu-sample{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px;margin:18px 0}.menu-sample span{padding:10px 8px;border:1px solid #ddd2e4;border-radius:10px;text-align:center;background:#faf7fb}.swatches{display:flex;gap:9px;margin:22px 0}.swatches span{width:39px;height:39px;border-radius:9px;border:2px solid #fff;box-shadow:0 0 0 1px #ddd}.sleep-demo{display:flex;align-items:center;justify-content:center;gap:20px;font-size:13px;margin:20px 0;text-align:center}.sleep-demo b{font-size:28px;color:#6b5577}.sleep-demo i{font-style:normal;color:#a28aad}.example{font-size:14px;color:#746b7c}.export{padding:18px;background:#f2eaf5;border-radius:13px;margin-top:22px;font-size:15px}.export p{margin:8px 0}.export small{font-size:12px}.chart-preview{padding:17px;background:#fffaf0;border:1px solid #e0d6c4;border-radius:13px;margin:18px 0;font-size:13px}.chart-preview div{font-size:19px;font-weight:700;margin-bottom:12px}.chart-preview small{display:block;font-size:12px;color:#8c7696}.chart-preview p{border-top:1px solid #e8dece;margin:0;padding:8px 0}.mini{padding:15px 0;border-bottom:1px solid #ded9e1}.mini p{margin:6px 0 0;font-size:15px}.extras{padding:28px 20px;background:#efe8f2;border-radius:24px;margin:20px 0}.extra-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin:20px 0}.extra-grid article{min-width:0;background:#fff;padding:16px;border-radius:15px}.extra-grid .ill{margin:auto;max-width:100%;width:110px;height:100px}.extra-grid p{font-size:14px;margin:0}.finish{text-align:center;padding:40px 12px}.nav-demo{display:flex;justify-content:center;gap:12px;margin:20px}.nav-demo span{border:1px solid #cbbad4;background:#ede4f1;border-radius:10px;padding:8px 24px;font-weight:700}.finish a{font-size:14px;color:#6e557c}footer{text-align:center;padding:22px 24px 34px;color:#81748a;font-size:13px;border-top:1px solid #e2d9e7}footer small{display:block;font-size:12px;margin-top:12px}@media(max-width:560px){.chapter{display:block;padding:22px 20px}.visual{float:right;margin:-8px -10px 0 2px}.visual .ill{width:110px;height:99px}.copy>.eyebrow,.copy>h2{max-width:none}.copy>h2{clear:both;padding-top:10px}.copy>.lead{clear:both;padding-top:10px}.chapter::after{content:"";display:block;clear:both}.extra-grid{gap:10px}.extra-grid article{padding:13px}.extra-grid h3{font-size:17px}.extra-grid p{font-size:13px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{nav{position:static}.chapter,.extras{break-inside:avoid}body{font-size:12pt}.finish a{display:none}}</style>
+</head>
+<body>
+<header id="top">
+<div class="brand">
+<span class="grape">●<br>●●<br>●</span>りっちゃん母子手帳</div>
+<p class="intro-label">ママのための、かんたん案内</p>
+<h1>毎日のことを残して、<br>必要なときに見る。</h1>
+<p class="intro">全部を埋めなくても大丈夫。<br>残しておきたいことから、少しずつ。</p>
+<svg class="ill" viewBox="0 0 200 180" aria-hidden="true">
+<g stroke="#64546c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M67 66a33 33 0 1 0 66 0 33 33 0 0 0-66 0" fill="#f9d9bd"/>
+<path d="M92 33c-6-15 18-19 15-5-1 7-12 4-8 0"/>
+<path d="M84 67h1m30 0h1M91 81q9 7 18 0"/>
+<path d="M61 145q0-43 39-43t39 43" fill="#e4dced"/>
+<path d="M89 111l11 15 11-15"/>
+</g>
+</svg>
+<div class="flow">
+<span>記録する</span>
+<b>→</b>
+<span>見返す</span>
+<b>→</b>
+<span>伝える</span>
+</div>
+<p class="swipe">下へスクロールして読めます ↓</p>
+</header>
+<nav aria-label="案内の目次">
+<a href="#start">はじめに</a>
+<a href="#daily">記録</a>
+<a href="#review">見る</a>
+<a href="#doctor">病院</a>
+<a href="#help">便利機能</a>
+</nav>
+<main>
+<section id="start" class="chapter">
+<div class="visual">
+<svg class="ill" viewBox="0 0 200 180" aria-hidden="true">
+<g stroke="#64546c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M55 41h90v113H55z" fill="#fff"/>
+<path d="M73 68h55m-55 26h55m-55 26h55"/>
+<circle cx="90" cy="68" r="8" fill="#c6decf"/>
+<circle cx="115" cy="94" r="8" fill="#d7c3e4"/>
+<circle cx="85" cy="120" r="8" fill="#efd99c"/>
+</g>
+</svg>
+<span class="step">01</span>
+</div>
+<div class="copy">
+<p class="eyebrow">01</p>
+<h2>最初に、一度だけ。</h2>
+<p class="lead">名前・出生日などを設定します。</p>
+<div class="route">
+<span>TOP</span>
+<i>›</i>
+<span>初期設定・出産準備</span>
+</div>
+<p>入院の準備や、使いたい記録の項目もここから。離乳食を始めたら、表示する項目に加えられます。</p>
+<div class="tip">TOPは、最初のメニュー画面のことです。</div>
+</div>
+</section>
+<section id="daily" class="chapter">
+<div class="visual">
+<svg class="ill" viewBox="0 0 200 180" aria-hidden="true">
+<g stroke="#64546c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M90 32q10-23 20 0v12H90z" fill="#f9d9bd"/>
+<path d="M80 44h40v14H80z" fill="#bad9cd"/>
+<rect x="76" y="58" width="48" height="83" rx="14" fill="#fff"/>
+<path d="M77 96h46v30q0 15-15 15H91q-15 0-14-15z" fill="#fff0cb"/>
+<path d="M105 74h10m-10 14h10m-10 14h10m-10 14h10"/>
+</g>
+</svg>
+<span class="step">02</span>
+</div>
+<div class="copy">
+<p class="eyebrow">02</p>
+<h2>気付いたときに、記録。</h2>
+<p class="lead">TOPの「毎日の記録」を押します。</p>
+<div class="menu-sample">
+<span>体温・顔色・ご機嫌</span>
+<span>ミルク・授乳</span>
+<span>おしっこ・うんち</span>
+<span>赤ちゃん・ママの睡眠</span>
+<span>身長・体重</span>
+<span>ママの体調・服薬</span>
+</div>
+<p>その日のメモや、離乳食の記録もできます。記録したい項目を選び、最後に<strong>「保存」</strong>を押してください。</p>
+<div class="tip">測っていない項目は空欄で大丈夫。未記録は「0」や「異常なし」という意味ではありません。</div>
+</div>
+</section>
+<section id="diaper" class="chapter">
+<div class="visual">
+<svg class="ill" viewBox="0 0 200 180" aria-hidden="true">
+<g stroke="#64546c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M51 56h98l-10 60q-39 45-78 0z" fill="#fff"/>
+<path d="M51 56l27 22 22-9 22 9 27-22M60 114q18-3 21-21m58 21q-18-3-21-21"/>
+<path d="M72 35q11-27 22-4c10-23 26-9 17 6l-17 17z" fill="#e5c2cc"/>
+<circle cx="63" cy="142" r="8" fill="#f1d56c"/>
+<circle cx="88" cy="142" r="8" fill="#c39356"/>
+<circle cx="113" cy="142" r="8" fill="#789b74"/>
+<circle cx="138" cy="142" r="8" fill="#e8d9bd"/>
+</g>
+</svg>
+<span class="step">03</span>
+</div>
+<div class="copy">
+<p class="eyebrow">03</p>
+<h2>便・尿も、かんたんに。</h2>
+<p class="lead">色や量、便の固さなどを残せます。</p>
+<div class="swatches" aria-label="色を選ぶイメージ">
+<span style="background:#eee4ce">
+</span>
+<span style="background:#efd677">
+</span>
+<span style="background:#c69b61">
+</span>
+<span style="background:#80986e">
+</span>
+<span style="background:#9c615a">
+</span>
+</div>
+<p>見た色に近いものをタップ。1か月分を並べて、変化を見返せます。</p>
+<div class="tip">色は観察の目安です。このアプリは病気を判断しません。気になる様子は医師に伝えてください。</div>
+</div>
+</section>
+<section id="sleep" class="chapter">
+<div class="visual">
+<svg class="ill" viewBox="0 0 200 180" aria-hidden="true">
+<g stroke="#64546c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M133 27a39 39 0 1 0 23 61 34 34 0 0 1-23-61" fill="#f4df9e"/>
+<path d="M43 107h114v32H43z" fill="#d7d0e6"/>
+<path d="M43 87v65m114-35v35"/>
+<rect x="48" y="96" width="31" height="21" rx="9" fill="#fff"/>
+<path d="M86 94q51-17 66 20H86" fill="#bfd9ce"/>
+<path d="M49 49h16L49 66h16m18-37h14L83 44h14"/>
+</g>
+</svg>
+<span class="step">04</span>
+</div>
+<div class="copy">
+<p class="eyebrow">04</p>
+<h2>睡眠は、二つの時刻。</h2>
+<p class="lead">入眠と起床を入れると、時間を計算します。</p>
+<div class="sleep-demo">
+<span>寝た時刻<br>
+<b>22:00</b>
+</span>
+<i>→</i>
+<span>起きた時刻<br>
+<b>01:00</b>
+</span>
+</div>
+<p class="example">たとえば、この睡眠は3時間。</p>
+<p>昼寝も一回ずつ記録できます。赤ちゃんとママ、それぞれの一日の合計を見られます。</p>
+</div>
+</section>
+<section id="review" class="chapter">
+<div class="visual">
+<svg class="ill" viewBox="0 0 200 180" aria-hidden="true">
+<g stroke="#64546c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<rect x="42" y="30" width="116" height="124" rx="12" fill="#fff"/>
+<path d="M61 55v78h77M67 114l22-20 19 7 28-35"/>
+<circle cx="67" cy="114" r="4" fill="#6d947e"/>
+<circle cx="89" cy="94" r="4" fill="#6d947e"/>
+<circle cx="108" cy="101" r="4" fill="#6d947e"/>
+<circle cx="136" cy="66" r="4" fill="#6d947e"/>
+<path d="M68 45h40m-40 102h62"/>
+</g>
+</svg>
+<span class="step">05</span>
+</div>
+<div class="copy">
+<p class="eyebrow">05</p>
+<h2>見たいときは、こちら。</h2>
+<p class="lead">TOPの「記録を見る」を押します。</p>
+<div class="route">
+<span>記録を見る</span>
+<i>›</i>
+<span>赤ちゃん・ママ</span>
+<i>›</i>
+<span>見たい項目</span>
+</div>
+<p>日付を選んで記録を見たり、グラフで変化を見たりできます。入力を間違えたら、記録の<strong>「確認・訂正」や「訂正」</strong>から直せます。</p>
+<div class="export">
+<b>身長・体重をExcelへ</b>
+<p>赤ちゃんの身長か体重のページで、<strong>「Excel用に保存」</strong>を押すだけ。全期間の測定日時・生後日数・身長・体重をまとめます。</p>
+<small>Excelで開けるCSVファイルです。グラフの期間を変えても、全期間分を保存します。</small>
+</div>
+</div>
+</section>
+<section id="doctor" class="chapter">
+<div class="visual">
+<svg class="ill" viewBox="0 0 200 180" aria-hidden="true">
+<g stroke="#64546c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<rect x="64" y="25" width="90" height="132" rx="10" fill="#fff"/>
+<rect x="87" y="20" width="44" height="15" rx="5" fill="#d8cce5"/>
+<path d="M108 47v26m-13-13h26M84 91h50m-50 18h50m-50 18h32"/>
+<path d="M40 61v41q0 23 22 23t22-23V61"/>
+<circle cx="40" cy="60" r="5" fill="#6d947e"/>
+<circle cx="84" cy="60" r="5" fill="#6d947e"/>
+<path d="M62 125v18q0 19 20 19t20-19"/>
+<circle cx="103" cy="139" r="9" fill="#c4dbcf"/>
+</g>
+</svg>
+<span class="step">06</span>
+</div>
+<div class="copy">
+<p class="eyebrow">06</p>
+<h2>受診するときに。</h2>
+<p class="lead">TOPの「健康カルテ／お医者様へ」を押します。</p>
+<div class="chart-preview">
+<div>健康カルテ <small>お医者様へ</small>
+</div>
+<p>日付・生後日数・地域の気温と湿度</p>
+<p>体温・授乳・便・尿・睡眠など</p>
+<p>その日の記録とメモ</p>
+</div>
+<p>見せたい日を選ぶと、その日の情報がまとまります。記録のある前後の日へ移動できます。体温を何度か測った日は、その経過も一覧で確認できます。</p>
+<div class="tip">受診のときは、この画面を見せながら説明できます。記録を埋めるより、赤ちゃんへの対応を優先してください。</div>
+</div>
+</section>
+<section id="vaccine" class="chapter">
+<div class="visual">
+<svg class="ill" viewBox="0 0 200 180" aria-hidden="true">
+<g stroke="#64546c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<rect x="69" y="20" width="66" height="140" rx="14" fill="#fff"/>
+<path d="M89 32h26m-34 14h42v92H81z"/>
+<circle cx="102" cy="149" r="3"/>
+<path d="M91 64q-10 25 21 46l9-12-13-9-5 5q-10-5-7-14l5-5z" fill="#bad9cd"/>
+</g>
+</svg>
+<span class="step">07</span>
+</div>
+<div class="copy">
+<p class="eyebrow">07</p>
+<h2>予定と連絡先も、ひとまとめ。</h2>
+<p class="lead">予防接種と電話帳を、必要なときに。</p>
+<div class="mini">
+<b>予防接種</b>
+<p>接種の説明を調べ、「予定・済・打たない」を記録。場所やメモも残せます。</p>
+</div>
+<div class="mini">
+<b>電話帳は10件</b>
+<p>2秒押すと登録・変更。右端までスライドすると、発信の確認画面へ進みます。</p>
+</div>
+<p class="example">病院など、よく使う連絡先を先に登録すると便利です。</p>
+</div>
+</section>
+<section id="help" class="extras">
+<p class="eyebrow">08</p>
+<h2>手が空かないときにも。</h2>
+<p>TOPから、すぐ使える道具です。</p>
+<div class="extra-grid">
+<article>
+<svg class="ill" viewBox="0 0 200 180" aria-hidden="true">
+<g stroke="#64546c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<circle cx="100" cy="94" r="47" fill="#fff"/>
+<path d="M100 63v32l21 15M66 135l-9 15m77-15 9 15M49 52q9-27 30-13m42 0q21-14 30 13"/>
+<path d="M94 91q4-9 9-5 5-4 9 0 5 5-9 16-15-10-9-11" fill="#d9c5e4"/>
+</g>
+</svg>
+<h3>音声アラーム</h3>
+<p>自分の声で知らせます。最大10件。試し聞き・停止・スヌーズもできます。</p>
+</article>
+<article>
+<svg class="ill" viewBox="0 0 200 180" aria-hidden="true">
+<g stroke="#64546c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<rect x="84" y="30" width="32" height="69" rx="16" fill="#d5c3e3"/>
+<path d="M70 76v14q0 33 30 33t30-33V76m-30 47v27m-19 0h38"/>
+<path d="M94 49h12m-12 12h12"/>
+</g>
+</svg>
+<h3>声だけメモ</h3>
+<p>思い付いたことを声で。最大5分・1件。次の録音を保存すると前の録音は置き換わります。</p>
+</article>
+<article>
+<svg class="ill" viewBox="0 0 200 180" aria-hidden="true">
+<g stroke="#64546c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M44 59h30l10-17h35l10 17h27v81H44z" fill="#fff"/>
+<circle cx="100" cy="100" r="28" fill="#d5e5dd"/>
+<circle cx="100" cy="100" r="16" fill="#d4c5df"/>
+<path d="M135 74h9"/>
+</g>
+</svg>
+<h3>カメラ・手鏡</h3>
+<p>カメラはTOPのボタンから。手鏡は看板を1秒押して開きます。</p>
+</article>
+<article>
+<svg class="ill" viewBox="0 0 200 180" aria-hidden="true">
+<g stroke="#64546c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<rect x="39" y="35" width="122" height="115" rx="10" fill="#fff"/>
+<path d="M48 135l35-45 24 24 21-16 25 37" fill="#bed6c8"/>
+<circle cx="130" cy="65" r="12" fill="#f2d795"/>
+<path d="M48 141h104"/>
+</g>
+</svg>
+<h3>写真館</h3>
+<p>好きな写真を10枚まで。自動表示もできます。「終了」でTOPへ戻ります。</p>
+</article>
+</div>
+<div class="tip">音声アラームは画面を開いて使います。画面ロック中やアプリを閉じたときは、鳴らない場合があります。</div>
+</section>
+<section id="backup" class="chapter">
+<div class="visual">
+<svg class="ill" viewBox="0 0 200 180" aria-hidden="true">
+<g stroke="#64546c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M50 33h88l16 17v101H46V33z" fill="#fff"/>
+<path d="M66 33v39h63V33M66 151v-47h68v47" fill="#d9cce6"/>
+<path d="M110 44h9v17h-9" fill="#fff"/>
+<circle cx="145" cy="131" r="23" fill="#c7e0d3"/>
+<path d="M134 131l8 9 15-19"/>
+</g>
+</svg>
+<span class="step">09</span>
+</div>
+<div class="copy">
+<p class="eyebrow">09</p>
+<h2>大切な記録を、別に保存。</h2>
+<p class="lead">TOPの「バックアップ・復元」から。</p>
+<p>記録は、使っているブラウザの中にあります。スマホの故障やデータ消去に備え、ときどきバックアップを保存してください。</p>
+<div class="tip">Excel用の身長・体重ファイルと、全データのバックアップは別のものです。</div>
+</div>
+</section>
+<section class="finish">
+<h2>迷ったら、TOPへ。</h2>
+<p>「戻る」で一つ前へ。<br>「TOP」で最初のメニューへ戻れます。</p>
+<div class="nav-demo">
+<span>← 戻る</span>
+<span>TOP</span>
+</div>
+<p>入力途中で移動するときは、<br>保存するか、しないかを選べます。</p>
+<a href="#top">案内のはじめに戻る ↑</a>
+</section>
+</main>
+<footer>りっちゃん母子手帳 v1.17<br>かんたん使い方案内 · Budo Company<br>
+<small>このページは説明専用です。記録や設定の操作はアプリで行ってください。</small>
+</footer>
+</body>
+</html>
