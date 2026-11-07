@@ -16,6 +16,7 @@ function number(f,k,required=false){const s=f.get(k);if(s===''||s===null){if(req
 function dateField(at){return `<label>記録日時<input type="datetime-local" name="at" required value="${localTime(at)}"></label>`}
 function textField(name,label,value='',list=false){return `<label>${label}<input name="${name}" value="${esc(value)}" ${list?'list="food-words" autocomplete="off"':''}></label>${list?`<datalist id="food-words">${state.words.map(w=>`<option value="${esc(w)}">`).join('')}</datalist>`:''}`}
 function add(type,old=null,who='baby'){
+ const recordId=old?.id||uid();
  const r=old||{at:date===day(new Date())?new Date().toISOString():date+'T12:00:00',who};let body=dateField(r.at),title='';
  if(type==='milk'){title='ミルク・搾母乳';body+=`<label>種類<select name="kind"><option ${r.kind==='ミルク'?'selected':''}>ミルク</option><option ${r.kind==='搾母乳'?'selected':''}>搾母乳</option></select></label>`+num('amount','実際に飲んだ量','mL',r.amount??'')}
  if(type==='breast'){title='母乳';body+=`<label>左右<select name="side"><option>左</option><option ${r.side==='右'?'selected':''}>右</option><option ${r.side==='両方'?'selected':''}>両方</option></select></label>`+num('minutes','授乳時間（任意）','分',r.minutes??'')+'<p class="hint">授乳時間を母乳量に換算しません。</p>'}
@@ -25,7 +26,7 @@ function add(type,old=null,who='baby'){
  if(type==='growth'){title='身長・体重';body+=num('height','身長','cm',r.height??'')+num('weight','体重','kg',r.weight??'')}
  if(type==='mama'){title='ママの体調';body+=textField('condition','体調・気分・休息・お薬など',r.condition||'')}
  body+=`<label>補足（任意）<textarea name="memo">${esc(r.memo||'')}</textarea></label>`;
- form(title,body,async f=>{const at=new Date(f.get('at'));if(!Number.isFinite(+at))throw Error('日時を確認してください');const n={id:old?.id||uid(),type,at:at.toISOString(),who:r.who||who,memo:String(f.get('memo')||'').trim()};
+ form(title,body,async f=>{const at=new Date(f.get('at'));if(!Number.isFinite(+at))throw Error('日時を確認してください');const n={id:recordId,type,at:at.toISOString(),who:r.who||who,memo:String(f.get('memo')||'').trim()};
  if(type==='milk'){n.kind=f.get('kind');n.amount=number(f,'amount',true);if(n.amount>1000&&!confirm('1回の量が1000 mLを超えています。入力どおり保存しますか？'))throw Error('量を確認してください')}
  if(type==='breast'){n.side=f.get('side');n.minutes=number(f,'minutes')}
  if(type==='food'){n.food=String(f.get('food')).trim();n.quantity=String(f.get('quantity')).trim();if(!n.food)throw Error('食べたものを入力してください')}
@@ -33,7 +34,7 @@ function add(type,old=null,who='baby'){
  if(type==='sleep'){const end=new Date(f.get('end'));if(!Number.isFinite(+end)||end<=at)throw Error('起きた日時は寝た日時より後にしてください');if(end-at>86400000&&!confirm('24時間を超える記録です。入力どおり保存しますか？'))throw Error('日時を確認してください');n.end=end.toISOString()}
  if(type==='growth'){n.height=number(f,'height');n.weight=number(f,'weight');if(n.height===null&&n.weight===null)throw Error('身長か体重を入力してください');if((n.height!==null&&(n.height<20||n.height>150)||n.weight!==null&&(n.weight<0.5||n.weight>50))&&!confirm('単位と数値を確認してください。この値で保存しますか？'))throw Error('数値を確認してください')}
  if(type==='mama'){n.condition=String(f.get('condition')).trim();if(!n.condition&&!n.memo)throw Error('内容を入力してください')}
- const next=state.records.filter(x=>x.id!==n.id);next.push(n);state.records=next;if(type==='food'&&!state.words.includes(n.food))state.words.push(n.food);await persist()})
+ const previous=state.records,previousWords=state.words;state.records=previous.filter(x=>x.id!==n.id).concat(n);if(type==='food'&&!previousWords.includes(n.food))state.words=previousWords.concat(n.food);try{await persist()}catch(e){state.records=previous;state.words=previousWords;throw e}})
 }
 function description(r){return ({milk:()=>`${r.kind} ${r.amount} mL`,breast:()=>`母乳 ${r.side}${r.minutes?' '+r.minutes+'分':''}`,food:()=>`離乳食 ${r.food} ${r.quantity||''}`,diaper:()=>r.kind,sleep:()=>`${r.who==='mama'?'ママ':'赤ちゃん'}睡眠 ${time(r.at)} → ${time(r.end)}（${day(r.at)!==day(r.end)?day(r.end)+' ':''}${duration(Math.round((new Date(r.end)-new Date(r.at))/60000))}）`,growth:()=>[r.height!==null?`身長 ${r.height} cm`:'',r.weight!==null?`体重 ${r.weight} kg`:''].filter(Boolean).join(' ／ '),mama:()=>r.condition,photo:()=>r.caption||'成長写真'}[r.type]||(()=>''))()}
 function entries(records){return records.length?records.sort((a,b)=>b.at.localeCompare(a.at)).map(r=>`<div class="entry"><span>${time(r.at)}</span><div class="info">${esc(description(r))}${r.memo?`<small>${esc(r.memo)}</small>`:''}</div><button data-edit="${r.id}">変更</button></div>`).join(''):'<p class="empty">まだ記録がありません。</p>'}
