@@ -83,3 +83,15 @@ main{padding-top:8px}.sign{display:block;width:100%;overflow:hidden;max-height:4
 .backup-overview{padding:12px;border:1px solid #cfc0d8;border-radius:12px;background:#faf7fc;margin:12px 0}.backup-overview h3{margin:12px 0 8px}.backup-overview p{line-height:1.8}#reset-done,#reset-reload,#reset-failed-home{min-height:48px;margin:8px 0}
 
 .usage-notice{font-size:14px;line-height:1.8;color:#514753;margin:16px 12px 12px;text-align:left;overflow-wrap:anywhere;}
+
+.alarm-empty{border:1px solid #ded5c8;cursor:default;}
+
+/* v1.22: measured and estimated values are visually separate. */
+.latest-measurements{background:#eef4f7;border:1px solid #c8d6df;border-radius:12px;padding:12px;margin:12px 0}.latest-measurements dl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}.latest-measurements dd{margin:0;font-weight:700}.latest-measurements small{display:block;font-weight:400;font-size:12px;color:#4e5b64}.latest-measurements .hint{margin:6px 0;font-size:12px}.measured-feeding{background:#edf5ee;padding:10px;border-radius:10px}.estimated-feeding{background:#fff5e4;border:1px solid #dec9a0;padding:10px;margin-top:10px;border-radius:10px}.milk-total h4{margin:0 0 8px}.milk-total details p{font-size:13px}.input-method-options{font-size:13px;margin:4px 0 8px;color:#53606a}.input-method-options summary{min-height:32px;padding:4px 0;cursor:pointer}.input-method-options .input-methods{margin-top:5px}.breast-estimate-details{padding:10px;background:#fff5e4;border-radius:10px}#feeding-kind-change{font-size:14px;padding:8px;min-height:40px;margin:0 0 10px}
+
+/* v1.23 gift: visible feeding methods, no additional navigation */
+.feeding-kind-tabs{display:flex;gap:6px;margin:10px 0}.feeding-kind-tabs button{flex:1;padding:12px 4px}.feeding-kind-tabs button[aria-pressed="true"]{background:#e9def2;border:2px solid #725282;font-weight:bold}.previous-feed{padding:10px;background:#f4f0e8;border-radius:8px;font-size:.9rem}#setup-later{margin:4px 0 14px;border:1px solid #8d779a;background:#f7f0fc}
+
+.save-feedback{background:#e6efdf;border:1px solid #8d9e7d;border-radius:8px;padding:10px;font-size:.9rem;pointer-events:none}
+
+.feeding-kind-legacy{display:none!important}
