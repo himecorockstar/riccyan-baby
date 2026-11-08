@@ -2459,7 +2459,7 @@ function render() {
 
   switch (page) {
     case 'home':
-      v.innerHTML = '<h2 class="top-marker">TOP <small>ここから選んでください</small></h2><div class="home-modes"><button data-go="daily">毎日の記録</button><button data-go="review">記録を見る</button><button data-go="tools">初期設定・出産準備</button><button data-go="alarms">音声アラーム</button><button data-go="health">健康カルテ<small class="doctor-subtitle">お医者様へ</small></button><a class="whowatch-button" href="https://whowatch.tv/" target="_blank" rel="noopener">ふわっち</a><button data-go="phonebook">電話帳</button><button data-go="gallery">写真館</button><button data-go="voice" class="quick-home">声だけメモ</button><button class="camera-home quick-home" data-go="camera">カメラ</button></div>';
+      v.innerHTML = '<h2 class="top-marker">TOP <small>ここから選んでください</small></h2><div class="home-modes"><button data-go="daily">毎日の記録</button><button data-go="review">記録を見る</button><button data-go="tools">初期設定・出産準備</button><button data-go="alarms">音声アラーム</button><button data-go="health">健康カルテ<small class="doctor-subtitle">お医者様へ</small></button><a class="whowatch-button" href="https://whowatch.tv/" target="_blank" rel="noopener">ふわっち</a><button data-go="phonebook">電話帳</button><button data-go="gallery">写真館</button><button data-go="voice" class="quick-home">声だけメモ</button><button class="camera-home quick-home" data-go="camera">カメラ</button><a class="home-guide" role="button" href="ritchan-baby-guide.html" target="_blank" rel="noopener">説明書を読む</a></div>';
       if (!$('#company-logo')) footer.insertAdjacentHTML('beforeend','<div id="company-logo"><p class="usage-notice">※このアプリは、りっちゃんと、りっちゃんが利用を許可した方専用です。</p><img src="budo-company-logo.jpg" alt="Budo Company・ぶどうカンパニー" width="1024" height="1024" loading="lazy"></div>');
       break;
     case 'daily':
